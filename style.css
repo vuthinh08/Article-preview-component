@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+:root {
+  --very-dark-grayish-blue: #48556a;
+  --desaturated-dark-blue: #6d7f97;
+  --grayish-blue: #9eafc2;
+  --light-grayish-blue: #ecf2f8;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 62.5%;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 0.1px);
+  background: linear-gradient(180deg, rgb(243, 148, 162) 0%, rgb(238, 189, 196) 100%);
+}
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.container {
+  max-width: 350px;
+  margin: 0 1.6rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(231, 65, 90, 0.829) 0%, rgb(194, 132, 141) 100%);
+}
+.header-img img {
+  border-radius: 10px 10px 0 0;
+}
+.card-main {
+  padding: 30px 28px 24px;
+  border-radius: 10px;
+  position: relative;
+}
+.card-main h1 {
+  font-size: 1rem;
+  color: var(--very-dark-grayish-blue);
+  padding-bottom: 20px;
+}
+.main-desc {
+  font-size: 0.8rem;
+  color: #f3f7fc;;
+  line-height: 1.5;
+  padding-bottom: 35px;
+}
+.footer-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  /* margin-right: 20px; */
+}
+.footer-img img {
+  border-radius: 100rem;
+}
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+.footer-info h3 {
+  font-size: 0.8rem;
+  color: var(--very-dark-grayish-blue);
+}
+.footer-info p {
+  font-size: 0.9rem;
+  line-height: 2;
+  color: #f3f7fc;;
+}
+.share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: lightpink;
+  border-radius: 30px;
+}
+.share img {
+  cursor: pointer;
+  width: 15px;
+  height: 13px;
+}
+.is-selected {
+  background-color: #5b64726d;
+}
+.modal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #48556a;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  animation: growthIn ease-in 0.3s;
+  will-change: opacity, transform;
+}
+@keyframes growthIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.modal h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 4.5px;
+  padding: 25px 0 25px 25px;
+  font-weight: 500;
+  color: #6d7f97;
+}
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+.share-modal {
+  cursor: pointer;
+  background-color: #6d7f97;
+}
+.hidden {
+  display: none;
+}
+/* .overlay {
+  width: 100%;
+} */
+
+@media screen and (min-width: 900px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 850px;
+    margin: 0 2rem;
+    background-color: white;
+    border-radius: 10px;
+  }
+  .header-img,
+  .header-img img {
+    border-radius: 10px 0 0 10px;
+  }
+  .header-img {
+    width: 60rem;
+  }
+  .card-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+  }
+  .card-main h1 {
+    font-size: 1.4rem;
+  }
+  .main-desc {
+    padding-bottom: 2rem;
+  }
+  .footer-card {
+    width: 100%;
+    position: relative;
+  }
+  .share {
+    margin-left: 126px;
+  }
+  .share:focus {
+    background-color: lightpink;
+  }
+  .share:hover {
+    background-color: rgb(248, 139, 156);
+  }
+  .modal {
+    width: 50%;
+    border-radius: 10px;
+    left: 280px;
+    bottom: 70px;
+  }
+  .modal::after {
+    content: "";
+    border-width: 20px 28px;
+    border-style: solid;
+    border-color: #48556a transparent transparent transparent;
+    position: absolute;
+    right: 84px;
+    bottom: -30px;
+    animation: growth ease-in 0.3s;
+  }
+  .share-modal {
+    display: none;
+  }
+}
